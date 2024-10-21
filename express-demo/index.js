@@ -6,6 +6,51 @@ app.use(express.static('public'));
 app.set('views', (__dirname + "/views"));
 app.set('view engine', 'ejs');
 
+profile_data = [
+    {
+        name:"Anil",
+        contact: "+91874876733",
+        email: "anil@gmail.com",
+        qualification:[
+            {class: "10th", board: "CBSE", year: 2011},
+            {class: "12th", board: "CBSE", year: 2013}
+        ],
+        hobbies:["cricket","music","reading"]
+    },
+    {
+        name:"Anil",
+        contact: "+91874876733",
+        email: "anil@gmail.com",
+        qualification:[
+            {class: "10th", board: "CBSE", year: 2011},
+            {class: "12th", board: "CBSE", year: 2013}
+        ],
+        hobbies:["cricket","music","reading"]
+    },
+    {
+        name:"Anil",
+        contact: "+91874876733",
+        email: "anil@gmail.com",
+        qualification:[
+            {class: "10th", board: "CBSE", year: 2011},
+            {class: "12th", board: "CBSE", year: 2013}
+        ],
+        hobbies:["cricket","music","reading"]
+    }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get('/',(req,res)=>{
     const names=['Amit','Aman','Anikesh','Ajay','Arun','Arjun','Abhijit','Akhil','Anmol','Ankit'];
     let data=[];
@@ -17,6 +62,10 @@ app.get('/',(req,res)=>{
 });
 app.get('/aboutus', (req,res)=>{
     res.send('Hi this is aboutus page');
+})
+
+app.get('/profile/:n',(req,res)=>{
+    res.send(`Value you send to the page is : ${req.params.n}`);
 })
 
 
